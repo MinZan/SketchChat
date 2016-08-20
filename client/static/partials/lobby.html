@@ -1,0 +1,34 @@
+<div class="container lobby" ng-controller="LobbyController">
+
+    <canvas class='bgAnim' id='null'></canvas>
+
+    <div class="row">
+        <div class="columns four offset-by-four">
+            <h1 id=projname>SketchChat</h1>
+        </div>
+    </div>
+    <div class="row option">
+        <div class="columns two offset-by-four createCol">
+            <input id=createbtn type="submit" value="Create" ng-click="createLobby()" class="createButton">
+        </div>
+        <div class="columns two joinCol" id=joinrmbox>
+            <div class="row">
+                <div class="columns twelve">
+                    <input type="text" placeholder="Chatroom
+                     ID" class="lobbyName lobbyInput" ng-model="lobbyName">
+                </div>
+            </div>
+            <div class="row">
+                <div class="columns twelve">
+                    <input type="submit" value="Join" ng-click="joinLobby()" class="joinButton">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Background scripts -->
+    <script type='text/paperscript' src='./js/background.js'></script>
+    <script src="./js/paper-full.min.js"></script>
+
+</div>

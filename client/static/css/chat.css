@@ -1,0 +1,73 @@
+div.chat {
+    bottom:     0;
+    right:      0;
+
+    position:     fixed;
+    padding:      1em;
+
+    background:     rgba(250, 250, 250, 0.97);
+
+    /*border:         1px solid rgba(152, 152, 152, 0.7);*/
+    box-shadow:       3px 3px 3px 3px rgba(152, 152, 152, 0.7);
+}
+div.chat form.chatform {
+    margin: 0;
+}
+div.chat div.chatRow div.columns.top {
+    border: 1px solid rgba(152, 152, 152, 0.8);
+    padding: 1em;
+    border-radius: 3px;
+    height: 10em;
+    background: rgba(255, 255, 255, 0.9);
+}
+div.chat div.row.chatInputRow textarea[ng-model="chatbox"] {
+    resize: none;
+    border-radius: 3px;
+    margin-top: 1em;
+    height: 2em;
+    background: white;
+}
+div.chat div.row.title div.columns.three.toggleButton div {
+    text-align: right;
+}
+div.chat div.row.title:hover {
+    cursor: pointer;
+    color: rgb(200, 200, 200);
+}
+div.chat div.row.chatRow div.columns.chatCol {
+    overflow: scroll;
+}
+div.chat div.row.title {
+    margin-bottom: 1em;
+}
+div.chat div.title div.row i {
+    float: right;
+}
+div.chat div.menu {
+    padding-top: 1em;
+    padding-left: 1em;
+    background: rgba(255, 255, 255, 0.9);
+    /*box-shadow: 3px 3px 3px rgba(255, 255, 255, 0.9);*/
+    border-radius: 10px;
+    border: 1px solid rgb(231, 231, 231);
+    height: 150px;
+}
+div.chat ul.menuButtons *{
+    list-style-type: none;
+    border-bottom: rgb(193, 193, 193);
+    text-decoration: none;
+}
+div.chat ul.menuButtons li:hover *{
+    color: rgb(154, 154, 154);
+}
+div.cover {
+    bottom:     0;
+    right:      0;
+
+    position:     fixed;
+    padding:      1em;
+
+    background:     rgb(250, 250, 250);
+
+    border:         1px solid rgba(152, 152, 152, 0.7);
+}

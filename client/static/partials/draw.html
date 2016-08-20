@@ -1,0 +1,145 @@
+<div id=drawview class="draw" ng-controller="DrawController">
+
+    <div id="rightmenu" style="float: right">
+        <nav id="topNav">
+            <ul>
+
+                <li class=mainitem> <!-- toolbar item 1 -->
+                    <img id=painticon src="./img/paintcolor.png" alt="Color">
+                    <ul class=dropitem>
+                        <li>
+                            <button id=color1><span class=coloricon>●</span></button>
+                        </li>
+                        <li>
+                            <button id=color2><span class=coloricon>●</span></button>
+                        </li>
+                        <li>
+                            <button id=color3><span class=coloricon>●</span></button>
+                        </li>
+                        <li>
+                            <button id=color4><span class=coloricon>●</span></button>
+                        </li>
+                        <li>
+                            <button id=color5><span class=coloricon>●</span></button>
+                        </li>
+                    </ul>
+                </li> <!-- end of item 1 -->
+
+                <li class=mainitem>
+                    <i id=brushicon class="fa fa-paint-brush" aria-hidden="true"></i>
+                    <ul class=dropitem>
+                        <li>
+                            <button id=width1>|</button>
+                        </li>
+                        <li>
+                            <button id=width2>|</button>
+                        </li>
+                        <li>
+                            <button id=width3>|</button>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=mainitem>
+                    <img id=erasericon src="./img/eraser.png" alt="Eraser" />
+                    <ul class=dropitem>
+                        <li>
+                            <button id=eraser><img src="./img/eraser2.png" alt="Eraser2" /></button>
+                        </li>
+                        <li>
+                            <button id=resetbtn><img src="./img/whiteboard.png" alt="Whiteboard" /></button>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class=mainitem>
+                    <i id=texticon class="fa fa-lg fa-keyboard-o" aria-hidden="true"></i>
+                    <ul class=dropitem>
+                        <li>
+                            <button id="simpText">ABC</button>
+                        </li>
+                        <li>
+                            <button id="invite" data-toggle="modal" data-target="#myModal"><img src="./img/add-user.png" /></button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <canvas id=drawing></canvas>
+    <div id="smalltext" hidden=true>
+        <input id='ptextinput' type="text" placeholder='Simple text...' autocomplete='off' spellcheck='false' autocorrect='off'>
+    </div>
+</div>
+
+<div class="chat" ng-controller="ChatController">
+
+    <div class="row title" ng-click="toggleChat()">
+        <div class="columns three"><b>Menu</b></div>
+        <div class="columns two"><b>Chatbox</b></div>
+        <div class="columns one"><b>ChatRoom:</b></div>
+        <div class="columns five" ng-bind="lobby"></div>
+        <div class="columns one toggleButton"><div><i class="fa fa-caret-square-o-down" aria-hidden="true"></i></div></div>
+    </div>
+    <div class="row">
+        <div class="columns two menu">
+            <div class="row">
+                <div class="columns twelve">
+                    <ul class="menuButtons">
+                        <li><a href="/">Home</a></li>
+                        <li><a href='' ng-click='load_canv()'>Load Canvas</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="columns ten">
+            <div class="row chatRow">
+                <div class="columns twelve chatCol top"></div>
+            </div>
+            <div class="row chatInputRow">
+                <div class="columns twelve chatInputCol">
+                    <form class="chatForm">
+                        <textarea ng-model="chatbox" class="chatTextArea"></textarea>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cover">
+        Click here to chat
+        <br>
+        <br>
+        Please enter a name
+        <br>
+        <br>
+        <form>
+            <input type="text" ng-model="displayName" class="chatDisplayName">
+            <input type="submit" ng-click="setName()">
+        </form>
+    </div>
+
+</div>
+
+<!-- Invite Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button style="width: 7%" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Invite Friend</h4>
+            </div>
+            <div class="modal-body">
+                <input id='email' type="text" placeholder="Email address, please use ';' for one or more emails..." autocomplete='off' spellcheck='false' autocorrect='off'>
+                <input id='content' type="text" placeholder='Message here...' autocomplete='off' spellcheck='false' autocorrect='off'>
+                <span id="message"></span>
+                <p id="notification"></p>
+            </div>
+            <div class="modal-footer">
+                <button style="width: 20%" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button id="send_email" style="width: 20%" type="button" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </div>
+</div>
