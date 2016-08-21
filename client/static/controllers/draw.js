@@ -343,7 +343,8 @@ app.controller('DrawController', function($scope, $location, socket) {
             var text = 'Hi ' + emailto + ',\nPlease join our drawing at ';
             text += $("#content").val();
             $("#notification").text("Sending E-mail...Please wait");
-            $.get("http://localhost:8000/send", {to: emailto, subject: subject, text: text},function(data){
+          //  $.get("https://localhost:8080/send", {to: emailto, subject: subject, text: text},function(data){
+			  $.get("https://sketchchat.herokuapp.com/send", {to: emailto, subject: subject, text: text},function(data){
                 if(data=="sent") {
                     $("#notification").text("E-mail has been sent to " + emailto);
                 }
